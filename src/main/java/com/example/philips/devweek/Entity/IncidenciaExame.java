@@ -1,14 +1,10 @@
 package com.example.philips.devweek.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-public class Incidencia {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+@Entity //coluna no banco de dados
+public class IncidenciaExame {
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false, updatable = false)
     private Long id;
     private Integer Regiao_id;
@@ -16,15 +12,14 @@ public class Incidencia {
     private Long Faixa_id;
     private Integer Qnt_exames;
 
-    public Incidencia(Long id, Integer regiao_id, Integer mes, Long faixa_id, Integer qnt_exames) {
-        this.id = id;
-        Regiao_id = regiao_id;
-        Mes = mes;
-        Faixa_id = faixa_id;
-        Qnt_exames = qnt_exames;
+    public IncidenciaExame(){
     }
 
-    public Incidencia() {
+    public IncidenciaExame(Integer regiaoid, Integer mes, Long faixaid, Integer qntexames){
+        this.Regiao_id = regiaoid;
+        this.Mes = mes;
+        this.Faixa_id = faixaid;
+        this.Faixa_id = faixaid;
     }
 
     public Long getId() {

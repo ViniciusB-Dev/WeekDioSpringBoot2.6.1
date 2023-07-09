@@ -4,49 +4,46 @@ import javax.persistence.*;
 
 @Entity
 public class FaixaEtaria {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(nullable = false, updatable = false)
     private Long id;
-    private String faixa_i;
-    private Long faixa_n;
-    private String descricao;
+    private Integer Faixa_i;
+    private Integer Faixa_n;
+    private String Descricao;
 
-    public FaixaEtaria(String faixa_i, Long faixa_n, String descricao) {
-        this.faixa_i = faixa_i;
-        this.faixa_n = faixa_n;
-        this.descricao = descricao;
+    public FaixaEtaria(Integer faixaI, Integer faixaN, String descricao) {
+        Faixa_i = faixaI;
+        Faixa_n = faixaN;
+        Descricao = descricao;
     }
 
-    public FaixaEtaria() {
-    }
+    public FaixaEtaria() {}
 
     public Long getId() {
         return id;
     }
 
-    public String getFaixa_i() {
-        return faixa_i;
+    public Integer getFaixa_i() {
+        return Faixa_i;
     }
 
-    public void setFaixa_i(String faixa_i) {
-        this.faixa_i = faixa_i;
+    public void setFaixa_i(Integer faixa_i) {
+        Faixa_i = faixa_i;
     }
 
-    public Long getFaixa_n() {
-        return faixa_n;
+    public Integer getFaixa_n() {
+        return Faixa_n;
     }
 
-    public void setFaixa_n(Long faixa_n) {
-        this.faixa_n = faixa_n;
+    public void setFaixa_n(Integer faixa_n) {
+        Faixa_n = faixa_n;
     }
 
     public String getDescricao() {
-        return descricao;
+        return Descricao;
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        this.Descricao = descricao;
     }
 }
